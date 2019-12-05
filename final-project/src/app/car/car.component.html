@@ -1,0 +1,23 @@
+<!-- <p>car works!</p> -->
+
+<h2>Cars for rent</h2>
+<ul class="cars">
+  <li *ngFor="let car of cars"
+    [class.selected]="car == selectedCar"
+    (click)="onSelect(car)">
+    <span class="badge">{{car.id}}</span> {{car.maker}}
+  </li>
+</ul>
+
+<div *ngIf="selectedCar">
+
+  <h2>{{selectedCar.maker | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedCar.id}}</div>
+  <div><span>maker: </span>{{selectedCar.maker}}</div>
+  <!-- <div>
+    <label>Maker:
+      <input [(ngModel)]="selectedCar.maker" placeholder="maker"/>
+    </label>
+  </div> -->
+
+</div>
