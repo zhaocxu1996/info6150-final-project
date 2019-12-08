@@ -23,6 +23,24 @@ exports.list = function (request, response) {
 };
 
 /**
+ * Returns a list of stickies in JSON based on the
+ * search username.
+ *
+ * @param {request} {HTTP request object}
+ * @param {response} {HTTP response object}
+ */
+exports.search = function (request, response) {
+    const resolve = (user) => {
+        response.status(200);
+        response.json(user);
+    };
+    console.log(request.params.username);
+    userService.search({username: request.params.username})
+        .then(resolve)
+        .catch(renderErrorResponse(response));
+};
+
+/**
  * Creates a new user with the request JSON and
  * returns user JSON object.
  *
