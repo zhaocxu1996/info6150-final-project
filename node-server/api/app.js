@@ -1,9 +1,9 @@
 'use strict';
 module.exports = function (app) {
     //Initialize models
-    let stickyModel = require('./models/user');
+    let carModel = require('./models/car');
 
     //Initialize routes
-    let stickyRoutes = require('./routes/sticky-route');
-    stickyRoutes(app);
+    let carRoutes = require('./routes/car-route');
+    carRoutes(app);
 };

@@ -5,7 +5,7 @@ let express = require('express'),
     bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
-mongoose.connect('mongodb://localhost:27017/stickyDB', {
+mongoose.connect('mongodb://localhost:27017/finalDB', {
     useMongoClient: true
 });
 mongoose.Promise = global.Promise;
@@ -31,4 +31,4 @@ let initApp = require('./api/app');
 initApp(app);
 
 app.listen(port);
-console.log('Stickies RESTful API server started on: ' + port);
+console.log('C RESTful API server started on: ' + port);
