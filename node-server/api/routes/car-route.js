@@ -12,7 +12,7 @@ module.exports = function (app) {
 
     // Car Routes for get, update and delete.
     app.route('/cars/:id')
-        .get(carController.get)
+        .get(carController.search)
         .put(carController.put)
         .delete(carController.delete);
 };

@@ -5,6 +5,24 @@
 'use strict';
 //import car service.
 const carService = require('../services/car-service');
+
+/**
+ * Returns a list of cars in JSON based on the
+ * search car id.
+ *
+ * @param {request} {HTTP request object}
+ * @param {response} {HTTP response object}
+ */
+exports.search = function (request, response) {
+    const resolve = (user) => {
+        response.status(200);
+        response.json(user);
+    };
+    carService.search({productId: request.params.id})
+        .then(resolve)
+        .catch(renderErrorResponse(response));
+};
+
 /**
  * Returns a list of cars in JSON based on the
  * search parameters.
