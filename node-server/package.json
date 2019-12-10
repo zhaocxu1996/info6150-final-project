@@ -9,7 +9,7 @@
   "author": "Team Good Life",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.1",
     "mongoose": "^4.13.3"
   }
 }
