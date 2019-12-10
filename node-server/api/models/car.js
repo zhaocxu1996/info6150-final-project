@@ -15,12 +15,12 @@ let CarSchema = new Schema({
     // },
 
     productId:{
-       type:int,
+       type: Number,
        default:0
 
     },
 
-    vehicleName:{
+    productName:{
         type:String,
         default:0
     },
@@ -34,7 +34,7 @@ let CarSchema = new Schema({
     /**
      * Car content.
      */
-    year: {
+    productCode: {
         type: String,
         default:0
     },
@@ -47,11 +47,11 @@ let CarSchema = new Schema({
         default:0
     },
     price: {
-        type: double,
+        type: Number,
         default:0
     },
     starRating: {
-        type: double,
+        type: Number,
         default:0
     },
     /**

@@ -34,7 +34,7 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'register', component: RegisterComponent },
       { path: 'welcome/:id', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
-      { path:'checkout',component:CheckoutComponent},
+      { path:'checkout/:id',component:CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
      

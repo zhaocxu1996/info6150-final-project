@@ -51,7 +51,7 @@ exports.get = function (request, response) {
         response.status(200);
         response.json(car);
     };
-    carService.get(request.params.carId)
+    carService.get(request.params.id)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
