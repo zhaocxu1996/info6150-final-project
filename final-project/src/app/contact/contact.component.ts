@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserService } from '../users/user.service';
+import { Router } from '@angular/router';
+import { User } from '../users/user.model';
 
 
 @Component({
@@ -6,5 +9,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+
+  user: User;
+
+  constructor(private userService: UserService, private router: Router) { }
+
+  ngOnInit() {
+    if (this.userService.getUser() === undefined) {
+      this.router.navigate(['login']);
+    } else {
+      this.user = this.userService.getUser();
+    }
+  }
+
   public pageTitle = 'Contact';
+
+
+  update() {
+
+  }
 }
