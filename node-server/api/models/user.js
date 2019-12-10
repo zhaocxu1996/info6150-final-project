@@ -21,13 +21,6 @@ let UserSchema = new Schema({
         required: "password is required"
     },
     /**
-     * Balance of the user.
-     */
-    balance: {
-        type: Number,
-        default: 0
-    },
-    /**
      * User contact.
      */
     contact: {
