@@ -34,6 +34,7 @@ import { ContactComponent } from './contact/contact.component';
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
       // { path: '**', component: UserComponent}
     ]),
+    ProductModule
   ],
   bootstrap: [AppComponent]
 })
