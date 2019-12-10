@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  user: User;
   private username: string;
   private password: string;
   loginFailed = false;
@@ -23,10 +24,11 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
 
-  login(user: User) {
+  login() {
     this.userService.getUserByUsername(this.username).subscribe(data => {
       if (data.length !== 0 && data[0].password === this.password) {
-        this.router.navigate(['welcome']);
+        this.user = data[0];
+        this.router.navigate(['welcome', this.user.id]);
       } else {
         this.username = '';
         this.password = '';

@@ -26,4 +26,9 @@ export class UserService {
     const user$ = this.http.post<User>(this.remoteUrlPattern, user);
     return user$;
   }
+
+  public updateUser(user: User): Observable<User> {
+    const user$ = this.http.put<User>(this.remoteUrlPattern + `/${user.id}`, user);
+    return user$;
+  }
 }
