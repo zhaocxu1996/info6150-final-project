@@ -1,4 +1,3 @@
-// import { UserComponent } from './users/user.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginComponent } from './users/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
