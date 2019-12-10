@@ -9,8 +9,8 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
   pageTitle = 'Vehicle List';
-  imageWidth = 250;
-  imageMargin = 8;
+  imageWidth = 200;
+  imageMargin = 5;
   showImage = true;
   errorMessage = '';
 
@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter((product: IProduct) =>
-      product.vehicleName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      product.address.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
  
