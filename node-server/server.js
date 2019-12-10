@@ -5,7 +5,7 @@ let express = require('express'),
     bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
-mongoose.connect('mongodb://localhost:27017/stickyDB', {
+mongoose.connect('mongodb://localhost:27017/final', {
     useMongoClient: true
 });
 mongoose.Promise = global.Promise;

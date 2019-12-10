@@ -4,6 +4,6 @@ module.exports = function (app) {
     let stickyModel = require('./models/user');
 
     //Initialize routes
-    let stickyRoutes = require('./routes/sticky-route');
+    let stickyRoutes = require('./routes/user-route');
     stickyRoutes(app);
 };

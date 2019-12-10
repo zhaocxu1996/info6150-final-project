@@ -1,10 +1,10 @@
 /**
- * Controller for sticky endpoints.
+ * Controller for user endpoints.
  */
 
 'use strict';
-//import sticky service.
-const stickyService = require('../services/sticky-service');
+//import user service.
+const userService = require('../services/user-service');
 /**
  * Returns a list of stickies in JSON based on the
  * search parameters.
@@ -13,81 +13,99 @@ const stickyService = require('../services/sticky-service');
  * @param {response} {HTTP response object}
  */
 exports.list = function (request, response) {
-    const resolve = (stickies) => {
+    const resolve = (user) => {
         response.status(200);
-        response.json(stickies);
+        response.json(user);
     };
-    stickyService.search({})
+    userService.search({})
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Creates a new sticky with the request JSON and
- * returns sticky JSON object.
+ * Returns a list of stickies in JSON based on the
+ * search username.
+ *
+ * @param {request} {HTTP request object}
+ * @param {response} {HTTP response object}
+ */
+exports.search = function (request, response) {
+    const resolve = (user) => {
+        response.status(200);
+        response.json(user);
+    };
+    console.log(request.params.username);
+    userService.search({username: request.params.username})
+        .then(resolve)
+        .catch(renderErrorResponse(response));
+};
+
+/**
+ * Creates a new user with the request JSON and
+ * returns user JSON object.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.post = function (request, response) {
-    const newSticky = Object.assign({}, request.body);
-    const resolve = (sticky) => {
+    const newUser = Object.assign({}, request.body);
+    const resolve = (user) => {
         response.status(200);
-        response.json(sticky);
+        response.json(user);
     };
-    stickyService.save(newSticky)
+    userService.save(newUser)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Returns a sticky object in JSON.
+ * Returns a user object in JSON.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.get = function (request, response) {
-    const resolve = (sticky) => {
+    const resolve = (user) => {
         response.status(200);
-        response.json(sticky);
+        response.json(user);
     };
-    stickyService.get(request.params.stickyId)
+    userService.get(request.params.userId)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Updates and returns a sticky object in JSON.
+ * Updates and returns a user object in JSON.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.put = function (request, response) {
-    const sticky = Object.assign({}, request.body);
-    const resolve = (sticky) => {
+    const user = Object.assign({}, request.body);
+    const resolve = (user) => {
         response.status(200);
-        response.json(sticky);
+        response.json(user);
     };
-    sticky._id = request.params.stickyId;
-    stickyService.update(sticky)
+    user._id = request.params.userId;
+    userService.update(user)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Deletes a sticky object.
+ * Deletes a user object.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.delete = function (request, response) {
-    const resolve = (sticky) => {
+    const resolve = (user) => {
         response.status(200);
         response.json({
-            message: 'Sticky Successfully deleted'
+            message: 'user Successfully deleted'
         });
     };
-    stickyService.delete(request.params.stickyId)
+    userService.delete(request.params.userId)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
