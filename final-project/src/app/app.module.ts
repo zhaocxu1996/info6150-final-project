@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
 import { ContactComponent } from './contact/contact.component';
-import { CheckoutComponent } from './products/checkout/checkout.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CheckoutComponent } from './products/checkout/checkout.component';
     RegisterComponent,
     WelcomeComponent,
     ContactComponent,
-    // CheckoutComponent
+    CheckoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,11 +34,11 @@ import { CheckoutComponent } from './products/checkout/checkout.component';
       { path: 'register', component: RegisterComponent },
       { path: 'welcome/:id', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
-      // { path: 'checkout', component: CheckoutComponent },
+      { path:'checkout',component:CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
-
-      // { path: '**', component: UserComponent}
+     
+       
     ]),
     ProductModule
   ],

@@ -1,8 +1,8 @@
 export interface IProduct {
   productId: number;
-  vehicleName: string;
-  address:string;
-  year: string;
+  productName: string;
+  address:string,
+  productCode: string;
   releaseDate: string;
   price: number;
   description: string;

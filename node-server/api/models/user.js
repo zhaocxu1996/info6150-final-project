@@ -7,45 +7,50 @@ const Schema = mongoose.Schema;
  */
 let UserSchema = new Schema({
     /**
-     * username of the user.
+     * Username of the user.
      */
     username: {
         type: String,
         required: "username is required"
     },
     /**
-     * password of the user.
-    */
+     * Password of the user.
+     */
     password: {
         type: String,
         required: "password is required"
     },
     /**
-     * password of the user.
-    */
+     * Balance of the user.
+     */
     balance: {
         type: Number,
         default: 0
     },
     /**
-     * Sticky created date.
+     * User contact.
      */
-    createdDate: {
-        type: Date,
-        default: Date.now
-    },
-    /**
-     * Sticky content.
-     */
-    content: {
+    contact: {
         type: String
     },
     /**
-     * Last modified date.
+     * User address.
      */
-    modifiedDate: {
-        type: Date,
-        default: Date.now
+    address: {
+        type: String
+    },
+    /**
+     * User email.
+     */
+    email: {
+        type: String
+    },
+    /**
+     * The id of car that user rented
+     */
+    car: {
+        type: String,
+        default: null
     }
 }, {
     versionKey: false
@@ -60,4 +65,4 @@ UserSchema.set('toJSON', {
     virtuals: true
 });
 
-module.exports = mongoose.model('stickies', UserSchema);
+module.exports = mongoose.model('user', UserSchema);

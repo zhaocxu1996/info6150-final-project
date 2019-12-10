@@ -9,8 +9,8 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
   pageTitle = 'Vehicle List';
-  imageWidth = 250;
-  imageMargin = 8;
+  imageWidth = 200;
+  imageMargin = 5;
   showImage = true;
   errorMessage = '';
 

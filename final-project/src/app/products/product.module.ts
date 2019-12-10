@@ -6,7 +6,6 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ConvertToSpacesPipe } from '../shared/convert-to-spaces.pipe';
 import { ProductDetailGuard } from './product-detail.guard';
 import { SharedModule } from '../shared/shared.module';
-import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -23,8 +22,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ConvertToSpacesPipe,
-    CheckoutComponent
+    ConvertToSpacesPipe
   ]
 })
 export class ProductModule { }
