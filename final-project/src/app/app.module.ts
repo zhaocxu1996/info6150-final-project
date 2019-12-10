@@ -28,12 +28,12 @@ import { ContactComponent } from './contact/contact.component';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent },
-      { path: 'welcome/:id', component: WelcomeComponent },
+      { path: 'welcome', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
-      // { path: '**', component: UserComponent}
     ]),
+    ProductModule
   ],
   bootstrap: [AppComponent]
 })
