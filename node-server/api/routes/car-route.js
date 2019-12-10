@@ -11,7 +11,7 @@ module.exports = function (app) {
         .post(carController.post);
 
     // Car Routes for get, update and delete.
-    app.route('/cars/:carId')
+    app.route('/cars/:id')
         .get(carController.get)
         .put(carController.put)
         .delete(carController.delete);
