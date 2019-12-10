@@ -1,0 +1,57 @@
+[
+  {
+    "productId": 1,
+    "vehicleName": "BMW M4",
+    "address":"Boston",
+    "year": "2014",
+    "releaseDate": "March 19, 2019",
+    "description": "2014 BMW M4 Black RWD 6-Speed Manual 3.0L I6 2D Coupe, 3.0L I6, 6-Speed Manual, RWD, Black, Navigation System, Wheels: 19 x 9 Front/19 x 10 Rear Light Alloy.",
+    "price": 19.95,
+    "starRating": 3.2,
+    "imageUrl": "assets/images/m4.jpg"
+  },
+  {
+    "productId": 2,
+    "vehicleName": "BMW M3",
+    "address":"Boston",
+    "year": "2012",
+    "releaseDate": "March 18, 2019",
+    "description": "2012 BMW M3 Black RWD 6-Speed Manual 3.0L I6 2D Coupe, 3.0L I6, 6-Speed Manual, RWD, Black, Navigation System, Wheels: 19 x 9 Front/19 x 10 Rear Light Alloy.",
+    "price": 32.99,
+    "starRating": 4.2,
+    "imageUrl": "assets/images/m3.jpg"
+  },
+  {
+    "productId": 5,
+    "vehicleName": "Mecedes Benz S500",
+    "address":"Boston",
+    "year": "2018",
+    "releaseDate": "May 21, 2019",
+    "description": "2018 Mercedes-Benz S-Class S S500 4MATICA Black 7-Speed Automatic 5.5L V8 DOHC 32V Bi-Turbocharged S 63 AMGA 4MATICA, 4D Sedan, 5.5L V8 DOHC 32V Bi-Turbocharged, 7-Speed Automatic, 4MATICA, Black, Black w/AMG Exclusive Leather Upholstery",
+    "price": 8.9,
+    "starRating": 4.8,
+    "imageUrl": "assets/images/s500.jpg"
+  },
+  {
+    "productId": 8,
+    "vehicleName": "Mecedes Benz GLE350",
+    "address":"Chicago",
+    "year": "2019",
+    "releaseDate": "May 15, 2019",
+    "description": "2019 Mercedes-Benz GLE 350 in Lunar black Metallic, 115V AC Power Outlet, Android Auto, Apple CarPlay, Blind Spot Assist, KEYLESS GOA, Navigation Updates For 3 Years, Premium 1 Package",
+    "price": 11.55,
+    "starRating": 3.7,
+    "imageUrl": "assets/images/gle350.jpg"
+  },
+  {
+    "productId": 10,
+    "vehicleName": "Ford G12",
+    "address":"New York",
+    "year": "2015",
+    "releaseDate": "October 15, 2018",
+    "description": "2015 Ford G12 Gorgeous Black with Matching Black Leather Interior, Moonroof, Fully Serviced, Brand New Tires",
+    "price": 35.95,
+    "starRating": 4.6,
+    "imageUrl": "assets/images/ford.jpeg"
+  }
+]

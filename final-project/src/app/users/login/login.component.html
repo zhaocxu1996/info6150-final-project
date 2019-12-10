@@ -1,0 +1,18 @@
+<!-- <p>login works!</p> -->
+<div>
+  <button (click)="register()">Do not have account yet? Register HERE</button>
+  <div *ngIf="loginFailed">Log in failed!</div>
+  <form (ngSubmit)="login()">
+    <fieldset class="fieldset">
+      <label>Username: </label>
+      <input type="text" name="username" [(ngModel)]="username">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label>Password: </label>
+      <input type="password" name="password" [(ngModel)]="password">
+    </fieldset>
+    <div class="submit">
+      <button type="submit" class="login-btn">Log in</button>
+    </div>
+  </form>
+</div>

@@ -1,26 +1,41 @@
+// import { UserComponent } from './users/user.component';
+import { RegisterComponent } from './users/register/register.component';
+import { LoginComponent } from './users/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CarComponent } from './car/car.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CarDetailComponent } from './car-detail/car-detail.component';
+import { AppComponent } from './app.component';
+import { WelcomeComponent } from './home/welcome.component';
+import { ProductModule } from './products/product.module';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarComponent,
-    CarDetailComponent,
-   
+    LoginComponent,
+    RegisterComponent,
+    WelcomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+
+    RouterModule.forRoot([
+      { path: 'login', component: LoginComponent},
+      { path: 'register', component: RegisterComponent },
+      { path: 'welcome/:id', component: WelcomeComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: '**', redirectTo: 'login', pathMatch: 'full' }
+      // { path: '**', component: UserComponent}
+    ]),
+    ProductModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
