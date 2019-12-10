@@ -1,111 +1,93 @@
 /**
- * Controller for user endpoints.
+ * Controller for car endpoints.
  */
 
 'use strict';
-//import user service.
-const userService = require('../services/user-service');
+//import car service.
+const carService = require('../services/car-service');
 /**
- * Returns a list of stickies in JSON based on the
+ * Returns a list of cars in JSON based on the
  * search parameters.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.list = function (request, response) {
-    const resolve = (user) => {
+    const resolve = (cars) => {
         response.status(200);
-        response.json(user);
+        response.json(cars);
     };
-    userService.search({})
+    carService.search({})
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Returns a list of stickies in JSON based on the
- * search username.
- *
- * @param {request} {HTTP request object}
- * @param {response} {HTTP response object}
- */
-exports.search = function (request, response) {
-    const resolve = (user) => {
-        response.status(200);
-        response.json(user);
-    };
-    console.log(request.params.username);
-    userService.search({username: request.params.username})
-        .then(resolve)
-        .catch(renderErrorResponse(response));
-};
-
-/**
- * Creates a new user with the request JSON and
- * returns user JSON object.
+ * Creates a new car with the request JSON and
+ * returns car JSON object.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.post = function (request, response) {
-    const newUser = Object.assign({}, request.body);
-    const resolve = (user) => {
+    const newCar = Object.assign({}, request.body);
+    const resolve = (car) => {
         response.status(200);
-        response.json(user);
+        response.json(car);
     };
-    userService.save(newUser)
+    carService.save(newCar)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Returns a user object in JSON.
+ * Returns a car object in JSON.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.get = function (request, response) {
-    const resolve = (user) => {
+    const resolve = (car) => {
         response.status(200);
-        response.json(user);
+        response.json(car);
     };
-    userService.get(request.params.userId)
+    carService.get(request.params.carId)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Updates and returns a user object in JSON.
+ * Updates and returns a car object in JSON.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.put = function (request, response) {
-    const user = Object.assign({}, request.body);
-    const resolve = (user) => {
+    const car = Object.assign({}, request.body);
+    const resolve = (car) => {
         response.status(200);
-        response.json(user);
+        response.json(car);
     };
-    user._id = request.params.userId;
-    userService.update(user)
+    car._id = request.params.carId;
+    carService.update(car)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
 
 /**
- * Deletes a user object.
+ * Deletes a car object.
  *
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
 exports.delete = function (request, response) {
-    const resolve = (user) => {
+    const resolve = (car) => {
         response.status(200);
         response.json({
-            message: 'user Successfully deleted'
+            message: 'Car Successfully deleted'
         });
     };
-    userService.delete(request.params.userId)
+    carService.delete(request.params.carId)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
