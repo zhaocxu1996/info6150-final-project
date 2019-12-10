@@ -34,7 +34,7 @@ import { contactUsComponent } from './contactUs/contactUs.component';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent },
-      { path: 'welcome/:id', component: WelcomeComponent },
+      { path: 'welcome', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
       { path:'checkout',component:CheckoutComponent},
       { path: 'contactUs', component: contactUsComponent },

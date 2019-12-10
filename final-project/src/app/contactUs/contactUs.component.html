@@ -1,5 +1,5 @@
 ﻿<div id="container">
-     
+     
   <main>
          <h2>Contact Form</h2>
       Note : Fields marked with an asterisk(*) are mandatory
@@ -11,29 +11,28 @@
          <input type="radio" name="title" id="mrs" value="Mrs" required="required"/>Mrs.
          <br><br>
          <label for="firstName">First Name*:</label>
-         <input type="text" name="firstName" id="firstName" placeholder="First Name"  />  
-         <p class="fname"></p>
+         <input type="text" name="firstName" id="firstName" placeholder="First Name"  />  
+         <p class="fname"></p >
          <br><br>
      
          <label for="lastName">Last Name*:</label>
          <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-         <p class="lname"></p>
+         <p class="lname"></p >
          <br><br>
          
          <label for="emailId">Email Id*:</label>
          <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" onchange="emailValidation(this)">
-         <p class="email"></p>
+         <p class="email"></p >
          <br><br>
          
-
          <label for="phoneNumber">Phone Number*:</label>
          <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" onchange="phoneValidation(this)" />
-         <p class="phone"></p>
+         <p class="phone"></p >
          <br><br>
          
          <label for="zipcode">ZipCode*:</label>
          <input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" onchange="zipValidation(this)" />
-         <p class="zip"></p>
+         <p class="zip"></p >
          <br><br>
           
          <label for="zipcode">How did you hear us*:</label>
@@ -43,24 +42,3 @@
          <br><br> 
 
          <label for="">Options:</label>
-         <select name="Questions" id="Questions" onchange="exp(this)">
-         <option>Please Select Questions</option>
-         <option value="Check Availability">Check Availability</option>
-         <option value="Want To Rent This Car">Want To Rent This Car</option>
-         <option value="Ask For More Deteals">Ask For More Deteals</option>
-         </select><br>
-         <br><br>
-         <label for="comments">Comments*:</label>
-         <textarea name="text" id="comments" placeholder="Your comments" rows="4" cols="30"></textarea>
-         <p class="comment"></p>
-         <br><br>
-         <input type="Submit" value ="Submit" onclick="return validation()" >
-         <input type="Reset">
-         <br><br>
-      </form>
-  </main>
-</div>
-
-
-
-
