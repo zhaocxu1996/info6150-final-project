@@ -14,13 +14,13 @@ let CarSchema = new Schema({
     //     required: "title is required"
     // },
 
-    brand:{
-       type:String,
+    productId:{
+       type:int,
        default:0
 
     },
 
-    model:{
+    vehicleName:{
         type:String,
         default:0
     },
@@ -34,14 +34,33 @@ let CarSchema = new Schema({
     /**
      * Car content.
      */
-    location: {
+    year: {
         type: String,
+        default:0
+    },
+    releaseDate: {
+        type: String,
+        default:0
+    },
+    description: {
+        type: String,
+        default:0
+    },
+    price: {
+        type: double,
+        default:0
+    },
+    starRating: {
+        type: double,
         default:0
     },
     /**
      * Last modified date.
      */
-
+    imageUrl: {
+        type: String,
+        default:0
+    },
 }, {
     versionKey: false
 });
