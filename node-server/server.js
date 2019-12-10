@@ -5,9 +5,7 @@ let express = require('express'),
     bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
-
 mongoose.connect('mongodb://localhost:27017/final', {
-
     useMongoClient: true
 });
 mongoose.Promise = global.Promise;
@@ -34,4 +32,3 @@ initApp(app);
 
 app.listen(port);
 console.log(' RESTful API server started on: ' + port);
-

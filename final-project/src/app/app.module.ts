@@ -1,4 +1,3 @@
-// import { UserComponent } from './users/user.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginComponent } from './users/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,8 +9,6 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
 import { ContactComponent } from './contact/contact.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,9 +17,7 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
-    ContactComponent,
-    CheckoutComponent,
-    FooterComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -32,13 +27,10 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent },
-      { path: 'welcome/:id', component: WelcomeComponent },
+      { path: 'welcome', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
-      { path:'checkout',component:CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
-     
-       
     ]),
     ProductModule
   ],

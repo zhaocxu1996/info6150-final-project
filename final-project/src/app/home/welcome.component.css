@@ -1,0 +1,56 @@
+.background {
+    width: auto;
+    height: 600px;
+    background: url(http://www.thisislifeluxuryhub.com/top-tours-top-cars/wp-content/uploads/sites/5/2014/03/Red_Travel_16_.jpg) no-repeat 50%/cover;
+    background-position-y: 80%;
+}
+
+.b {
+    font-family: 'Freight', 'HoeflerText-Black', Times New Roman, serif;
+    color:white;
+    font-size:80px;
+    font-weight:800;
+  }
+
+.c {
+ font-family: 'Courier New', Courier, monospace;;
+}
+
+.d {
+    font-family: 'Franklin' Gothic Medium;
+    color:white;
+    font-size:25px;
+    font-weight:400;
+   }
+
+
+   
+   .btn {
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .list {
+    border-color: #ff9800;
+    color: orange;
+  }
+  
+  .list:hover {
+    background: #ff9800;
+    color: white;
+  }
+
+  .contact {
+    border-color: green;
+    color: green;
+  }
+  
+  .contact:hover {
+    background: green;
+    color: white;
+  }
