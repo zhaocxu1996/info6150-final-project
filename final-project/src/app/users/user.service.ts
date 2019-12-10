@@ -17,14 +17,14 @@ export class UserService {
     return users$;
   }
 
-  public getUserByUsername(username: string): Observable<Array<User>> {
-    const users$ = this.http.get<User[]>(this.remoteUrlPattern + `/${username}`);
-    return users$;
-  }
-
   public getUserById(id: number): Observable<Array<User>> {
     const users$ = this.http.get<User[]>(this.remoteUrlPattern + `${id}`);
     return users$;
+  }
+
+  public getUserByUsername(username: string): Observable<Array<User>> {
+    const user$ = this.http.get<User[]>(this.remoteUrlPattern + `/${username}`);
+    return user$;
   }
 
   public saveNewUser(user: Object): Observable<User> {
