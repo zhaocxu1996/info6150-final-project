@@ -54,7 +54,7 @@ let CarSchema = new Schema({
         type: Number,
         default:0
     },
-    location: {
+    address: {
         type: String
     },
     isRent: {
