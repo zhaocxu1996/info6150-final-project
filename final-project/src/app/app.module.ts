@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './UserInformation/contact.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FooterComponent } from './footer/footer.component';
+import { contactUsComponent } from './contactUs/contactUs.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     WelcomeComponent,
     ContactComponent,
     CheckoutComponent,
-    FooterComponent
+    FooterComponent,
+    contactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'register', component: RegisterComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
-      { path:'checkout/:id',component:CheckoutComponent},
+      { path: 'contactUs', component: contactUsComponent },
+      { path: 'checkout/:id', component: CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
     ]),
