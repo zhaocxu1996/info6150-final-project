@@ -4,7 +4,7 @@ export interface IProduct {
   year: number;
   releaseDate: string;
   price: number;
-  address: string;
+  location: string;
   isRent: boolean;
   description: string;
   starRating: number;
