@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProductService } from '../products/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from '../products/product';
+import { IProduct } from '../products/product.model';
 @Component({
   selector: 'pm-checkout',
   templateUrl: './checkout.component.html',
