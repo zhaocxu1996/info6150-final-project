@@ -22,7 +22,7 @@ export class ContactComponent {
     }
   }
 
-  public pageTitle = 'Contact';
+  public pageTitle = 'User Information';
 
 
   update() {
