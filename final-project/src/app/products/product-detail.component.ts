@@ -23,7 +23,9 @@ export class ProductDetailComponent implements OnInit {
     if (param) {
       const id = +param;
       this.getProduct(id);
+      console.log(id)
     }
+
   }
 
   getProduct(id: number) {

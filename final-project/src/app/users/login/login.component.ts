@@ -28,9 +28,7 @@ export class LoginComponent implements OnInit {
     this.userService.getUserByUsername(this.username).subscribe(data => {
       if (data.length !== 0 && data[0].password === this.password) {
         this.user = data[0];
-        this.userService.setUser(this.user);
-        console.log(this.user);
-        this.router.navigate(['welcome']);
+        this.router.navigate(['welcome', this.user.id]);
       } else {
         this.username = '';
         this.password = '';

@@ -30,10 +30,7 @@ export class UserService {
     return users$;
   }
 
-  // public getUserById(id: number): Observable<Array<User>> {
-  //   const users$ = this.http.get<User[]>(this.remoteUrlPattern + `${id}`);
-  //   return users$;
-  // }
+
 
   public setUser(user: User) {
     this.user = user;

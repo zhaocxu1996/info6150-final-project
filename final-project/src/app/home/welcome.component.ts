@@ -19,7 +19,7 @@ export class WelcomeComponent {
     ) {
 }
   onContact(): void {
-    this.router.navigate(['/contact']);
+    this.router.navigate(['/contactUs']);
   }
 
   onList(): void {
