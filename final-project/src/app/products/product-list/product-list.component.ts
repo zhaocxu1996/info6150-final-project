@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   pageTitle = 'Vehicle List';
   imageWidth = 200;
-  imageMargin = 5; 
+  imageMargin = 5;
   showImage = true;
   errorMessage = '';
 
@@ -37,10 +37,10 @@ export class ProductListComponent implements OnInit {
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter((product: IProduct) =>
-      product.address.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      product.location.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
- 
+
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe({

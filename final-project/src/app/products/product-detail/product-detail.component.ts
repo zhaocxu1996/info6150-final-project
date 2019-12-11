@@ -38,4 +38,8 @@ export class ProductDetailComponent implements OnInit {
   onBack(): void {
     this.router.navigate(['/products']);
   }
+
+  checkout() {
+    this.router.navigate(['/checkout', this.product.productId]);
+  }
 }

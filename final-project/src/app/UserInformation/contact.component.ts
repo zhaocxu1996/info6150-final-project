@@ -15,6 +15,7 @@ export class ContactComponent {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    console.log(this.userService.getUser());
     if (this.userService.getUser() === undefined) {
       this.router.navigate(['login']);
     } else {

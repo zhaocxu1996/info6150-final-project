@@ -38,7 +38,7 @@
               <td>
                 <img *ngIf='showImage'
                      [src]='product.imageUrl'
-                     [title]='product.productName'
+                     [title]='product.vehicleName'
                      [style.width.px]='imageWidth'
                      [style.margin.px]='imageMargin'>
               </td>
@@ -47,7 +47,7 @@
                   {{ product.vehicleName}}
                 </a>
               </td>
-              <td>{{ product.address }}</td>
+              <td>{{ product.location }}</td>
               <td>{{ product.year }}</td>
               <td>{{ product.releaseDate }}</td>
               <td>{{ product.price | currency:'USD':'symbol':'1.2-2'}}</td>
