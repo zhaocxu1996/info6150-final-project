@@ -48,7 +48,6 @@ export class UserService {
   }
 
   public saveNewUser(user: Object): Observable<User> {
-    console.log(user);
     const user$ = this.http.post<User>(this.remoteUrlPattern, user);
     return user$;
   }

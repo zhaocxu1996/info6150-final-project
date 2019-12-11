@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IProduct } from '../product';
-import { ProductService } from '../product.service';
+import { IProduct } from './product';
+import { ProductService } from './product.service';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter((product: IProduct) =>
-      product.location.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      product.vehicleName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
 
