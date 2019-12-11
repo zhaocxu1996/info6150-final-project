@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './UserInformation/contact.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FooterComponent } from './footer/footer.component';
 import { contactUsComponent } from './contactUs/contactUs.component';
