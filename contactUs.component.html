@@ -1,0 +1,84 @@
+﻿<div id="container">
+	<div class="grid">
+         <div class="grid-item">
+   <main>
+         <h3 class="gform_title">Send Us a Message</h3>
+          <!-- <h2>Contact Form</h2> -->
+      <p class="gform_description"> Note : Fields marked with an asterisk(*) are mandatory</p>
+       <br><br>
+       <form method="get" name="Form"  onsubmit="results();" action="displayResult.html">
+          <label>Title*:</label>
+          <input type="radio" name="title" id="miss" value="Miss" required="required"/>Miss
+          <input type="radio" name="title" id="mr" value="Mr" required="required"/>Mr.
+          <input type="radio" name="title" id="mrs" value="Mrs" required="required"/>Mrs.
+          <br><br>
+          <label for="firstName">First Name*:</label>
+          <input type="text" name="firstName" id="firstName" placeholder="First Name"  />	
+          <p class="fname"></p>
+          <br><br>
+      
+          <label for="lastName">Last Name*:</label>
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+          <p class="lname"></p>
+          <br><br>
+          
+          <label for="emailId">Email Id*:</label>
+          <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" onchange="emailValidation(this)">
+          <p class="email"></p>
+          <br><br>
+          
+ 
+          <label for="phoneNumber">Phone Number*:</label>
+          <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" onchange="phoneValidation(this)" />
+          <p class="phone"></p>
+          <br><br>
+          
+          <label for="zipcode">ZipCode*:</label>
+          <input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" onchange="zipValidation(this)" />
+          <p class="zip"></p>
+          <br><br>
+           
+
+ 
+          <label>Options:</label>
+          <select name="Questions" id="Questions" onchange="exp(this)">
+          <option>Please Select Questions</option>
+          <option value="Check Availability">Check Availability</option>
+          <option value="Want To Rent This Car">Want To Rent This Car</option>
+          <option value="Ask For More Deteals">Ask For More Deteals</option>
+          </select><br>
+          <br><br>
+          <label for="comments">Comments*:</label>
+          <textarea name="text" id="comments" placeholder="Your comments" rows="4" cols="30"></textarea>
+          <p class="comment"></p>
+          <br><br>
+            
+          <label for="zipcode">How did you hear us*:</label>
+          <input type='checkbox' name="source" value="facebook" /> Facebook
+          <input type='checkbox' name="source" value="google" /> Google
+          <input type='checkbox' name="source" value="yelp" /> Yelp 
+          <br><br>
+          <br><br> 
+          <input type="Submit" value ="Submit" onclick="return validation()" >
+          <input type="Reset">
+          <br><br>
+       </form>
+   </main>
+   </div>
+   <div class="grid-item">
+      <br><br><br>
+      <img src="https://www.regulatoryindex.com/images/Contact.jpg" width="100%">
+      <br><br>
+      <p class="address">GOODLIFE Support Center</p>
+      <p style="font-size: 20px;">360 Huntington Ave<br> Boston, MA 02115</p>
+      
+      <p style="font-size: 18px;">Email: info@GOODLIFE.com</p>
+      
+   
+      </div>
+   </div>
+ </div>
+ 
+ 
+ 
+ 
