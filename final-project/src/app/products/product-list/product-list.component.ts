@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IProduct } from './product';
-import { ProductService } from './product.service';
+import { IProduct } from '../product';
+import { ProductService } from '../product.service';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
 export class ProductListComponent implements OnInit {
   pageTitle = 'Vehicle List';
   imageWidth = 200;
-  imageMargin = 5;
+  imageMargin = 5; 
   showImage = true;
   errorMessage = '';
 
