@@ -27,6 +27,7 @@ export class ContactComponent {
 
 
   update() {
-
+    console.log(this.user);
+    this.userService.updateUser(this.user);
   }
 }
