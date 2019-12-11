@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { UserService } from '../users/user.service';
+import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { User } from '../users/user.model';
+import { User } from '../user.model';
 
 
 @Component({
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.css']
 })
-export class ContactComponent {
+export class SettingComponent {
 
   user: User;
 
