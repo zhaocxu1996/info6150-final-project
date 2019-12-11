@@ -27,11 +27,14 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.getUserByUsername(this.username).subscribe(data => {
       if (data.length !== 0 && data[0].password === this.password) {
+        // if password and username matches, set User in the UserService for authentication
         this.user = data[0];
         this.userService.setUser(this.user);
         console.log(this.user);
+        // log in succeed, redirect to home page
         this.router.navigate(['welcome']);
       } else {
+        // if log in failed, clear the user input
         this.username = '';
         this.password = '';
         this.loginFailed = true;

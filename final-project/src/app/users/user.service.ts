@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
+  // saved user when login succeed
   user: User;
 
   private remoteUrlPattern = 'http://localhost:3000/users';
