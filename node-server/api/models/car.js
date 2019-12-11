@@ -54,7 +54,7 @@ let CarSchema = new Schema({
         type: Number,
         default:0
     },
-    location: {
+    address: {
         type: String
     },
     isRent: {
@@ -67,7 +67,7 @@ let CarSchema = new Schema({
     imageUrl: {
         type: String,
         default:0
-    },
+    }
 }, {
     versionKey: false
 });

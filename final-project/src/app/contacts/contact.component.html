@@ -1,0 +1,79 @@
+﻿<div id="container">
+  <div class="grid">
+    <div class="grid-item">
+      <main>
+        <h3 class="gform_title">Send Us a Message</h3>
+        <!-- <h2>Contact Form</h2> -->
+        <p class="gform_description"> Note : Fields marked with an asterisk(*) are mandatory</p>
+        <br><br>
+        <form>
+          <label>Title*:</label>
+          <input type="radio" name="title" id="miss" value="Miss" required="required" [(ngModel)]="title"/>Miss
+          <input type="radio" name="title" id="mr" value="Mr" required="required" [(ngModel)]="title"/>Mr.
+          <input type="radio" name="title" id="mrs" value="Mrs" required="required" [(ngModel)]="title"/>Mrs.
+          <br><br>
+          <label for="firstName">First Name*:</label>
+          <input type="text" name="firstName" id="firstName" placeholder="First Name" [(ngModel)]="firstName" />
+          <p class="fname"></p>
+          <br><br>
+
+          <label for="lastName">Last Name*:</label>
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="lastName">
+          <p class="lname"></p>
+          <br><br>
+
+          <label for="emailId">Email Id*:</label>
+          <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" [(ngModel)]="email">
+          <p class="email"></p>
+          <br><br>
+
+
+          <label for="phoneNumber">Phone Number*:</label>
+          <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx"
+            [(ngModel)]="phone" />
+          <p class="phone"></p>
+          <br><br>
+
+          <label for="zipcode">ZipCode*:</label>
+          <input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" [(ngModel)]="zip" />
+          <p class="zip"></p>
+          <br><br>
+
+          <label>Options:</label>
+          <select name="Questions" id="Questions" [(ngModel)]="options">
+            <option value="">Please Select Questions</option>
+            <option value="Check Availability" >Check Availability</option>
+            <option value="Want To Rent This Car" >Want To Rent This Car</option>
+            <option value="Ask For More Details" >Ask For More Details</option>
+          </select><br>
+          <br><br>
+          <label for="comments">Comments*:</label>
+          <textarea name="text" id="comments" placeholder="Your comments" rows="4" cols="30" [(ngModel)]="comments"></textarea>
+          <p class="comment"></p>
+          <br><br>
+
+          <label for="zipcode">How did you hear us*:</label>
+          <input type='radio' name="source" value="facebook" [(ngModel)]="hearFrom"/> Facebook
+          <input type='radio' name="source" value="google" [(ngModel)]="hearFrom"/> Google
+          <input type='radio' name="source" value="yelp" [(ngModel)]="hearFrom"/> Yelp
+          <br><br>
+          <br><br>
+          <input type="Submit" value="Submit" (click)="save()">
+          <input type="Reset">
+          <br><br>
+        </form>
+      </main>
+    </div>
+    <div class="grid-item">
+      <br><br><br>
+      <img src="https://www.regulatoryindex.com/images/Contact.jpg" width="100%">
+      <br><br>
+      <p class="address">GOODLIFE Support Center</p>
+      <p style="font-size: 20px;">360 Huntington Ave<br> Boston, MA 02115</p>
+
+      <p style="font-size: 18px;">Email: info@GOODLIFE.com</p>
+
+
+    </div>
+  </div>
+</div>

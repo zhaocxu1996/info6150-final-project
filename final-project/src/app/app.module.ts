@@ -8,10 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
-import { ContactComponent } from './UserInformation/contact.component';
+import { SettingComponent } from './users/settings/settings.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FooterComponent } from './footer/footer.component';
-import { contactUsComponent } from './contactUs/contactUs.component';
+import { ContactComponent } from './contacts/contact.component';
 
 
 @NgModule({
@@ -20,10 +20,10 @@ import { contactUsComponent } from './contactUs/contactUs.component';
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
-    ContactComponent,
+    SettingComponent,
     CheckoutComponent,
     FooterComponent,
-    contactUsComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +34,8 @@ import { contactUsComponent } from './contactUs/contactUs.component';
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent },
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'contact', component: ContactComponent },
-      { path: 'contactUs', component: contactUsComponent },
+      { path: 'setting', component: SettingComponent },
+      { path: 'contactUs', component: ContactComponent },
       { path: 'checkout/:id', component: CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
