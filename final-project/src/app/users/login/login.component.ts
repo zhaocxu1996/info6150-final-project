@@ -2,6 +2,7 @@ import { User } from './../../users/user.model';
 import { UserService } from './../../users/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'pm-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   password: string;
   loginFailed = false;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private appComponent: AppComponent) { }
 
   ngOnInit() {
   }

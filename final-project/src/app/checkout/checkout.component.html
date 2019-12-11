@@ -391,10 +391,11 @@
 </div>
 
 <div *ngIf="id<0">
-  <div>
-    <span>You have successfully finished your payment!</span>
+  <div class="gform_title">
+    <h1>You have successfully finished your payment!</h1>
   </div>
   <div>
+      <p>You can pick your car at {{product.address}}.</p>
     <a href="#" [routerLink]="['/welcome']">Go back to the Home Page</a>
   </div>
 </div>
