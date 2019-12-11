@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
 import { IProduct } from './product';
+import { UserService } from '../users/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,11 @@ export class ProductService {
   // If using Stackblitz, replace the url with this line
   // because Stackblitz can't find the api folder.
   // private productUrl = 'assets/products/products.json';
-  private productUrl = 'api/products/products.json';
+  private productUrl = 'http://localhost:3000/cars';
+  private userUrl = 'http://localhost:3000/users';
+  // api/products/products.json
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userService: UserService) { }
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.productUrl)
@@ -29,6 +32,14 @@ export class ProductService {
       .pipe(
         map((products: IProduct[]) => products.find(p => p.productId === id))
       );
+  }
+
+  sellProduct(id: number) {
+    console.log(this.productUrl + `/${id}`);
+    this.http.put(this.productUrl + `/${id}`, {'isRent': true});
+    const user = this.userService.getUser();
+    console.log(this.userUrl + `/${user.id}`);
+    this.http.put(this.userUrl + `/${user.id}`, {'car': id.toString()});
   }
 
   private handleError(err: HttpErrorResponse) {

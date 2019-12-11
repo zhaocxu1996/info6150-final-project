@@ -86,8 +86,8 @@ exports.put = function (request, response) {
         response.status(200);
         response.json(user);
     };
-    user._id = request.params.userId;
-    userService.update(user)
+    const id = request.params.userId;
+    userService.update(id, user)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };

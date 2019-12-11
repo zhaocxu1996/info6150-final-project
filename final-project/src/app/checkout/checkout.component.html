@@ -28,19 +28,19 @@
                                 <div class="form-group">
                                     <label for="cc-payment" class="control-label mb-1">Payment amount</label>
                                     <input id="cc-payment" name="cc-payment" type="text" class="form-control"
-                                        aria-required="true" aria-invalid="false" required value=${{(product.price)+3}} [disabled]="true" > 
+                                        aria-required="true" aria-invalid="false" required value=${{(price)+3}} [disabled]="true" >
                                     <span class="invalid-feedback">Enter the payment amount</span>
                                 </div>
                                 <div class="form-group has-success">
                                     <label for="cc-name" class="control-label mb-1">Name on card</label>
-                                     <!-- customer name  has to be grater than three characters, only alphabetic characters are 
+                                     <!-- customer name  has to be grater than three characters, only alphabetic characters are
                                     allowed -->
                                     <input ngModel name="ccname"  #ccname="ngModel" id="cc-name" type="text"
                                         class="form-control cc-name" minlength="3" maxlength=30 pattern="^[a-zA-Z\s]+$"
                                         required [(ngModel)]= "username" >
 
-                                   
-                                   <div class="alert alert-danger" *ngIf="ccname.touched && !ccname.valid "> 
+
+                                   <div class="alert alert-danger" *ngIf="ccname.touched && !ccname.valid ">
                                         <div *ngIf="ccname.errors.required">
                                             Name is mandatory & must match as given on card.
                                         </div>
@@ -59,14 +59,14 @@
                                     <div class="controls">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                 <!-- first set of card number  is required, has to be minimum length 4 and 
+                                                 <!-- first set of card number  is required, has to be minimum length 4 and
                                                 must be numeric -->
                                                 <input type="text" class="form-control" minlength="4" maxlength="4"
                                                     pattern="[0-9]*" title="First four digits" required="" ngModel
                                                     name="ccnum1" #ccnum1="ngModel" [(ngModel)]= "cardnum1" >
 
-                                                <!-- <div class="alert alert-danger" *ngIf="ccnum1.touched && !ccnum1.valid"> 
-                                               
+                                                <!-- <div class="alert alert-danger" *ngIf="ccnum1.touched && !ccnum1.valid">
+
                                                     <div *ngIf="ccnum1.errors.required">
                                                         Can't be left empty.
                                                     </div> -->
@@ -84,7 +84,7 @@
                                              <input type="text" class="form-control" minlength="4" maxlength="4"
                                                     pattern="[0-9]*" title="Second four digits" required="" ngModel
                                                     name="ccnum2" #ccnum2="ngModel" [(ngModel)]= "cardnum2" >
-                                                <!-- second set of card number  is required, has to be minimum length 4 and 
+                                                <!-- second set of card number  is required, has to be minimum length 4 and
                                                 must be numeric -->
                                                 <!-- <div class="alert alert-danger" *ngIf="ccnum2.touched && !ccnum2.valid" > -->
 
@@ -104,7 +104,7 @@
                                                 <input type="text" class="form-control" minlength="4" maxlength="4"
                                                     pattern="[0-9]*" title="Third four digits" required="" ngModel
                                                     name="ccnum3" #ccnum3="ngModel" [(ngModel)]= "cardnum3" >
-                                                <!-- third set of card number  is required, has to be minimum length 4 and 
+                                                <!-- third set of card number  is required, has to be minimum length 4 and
                                                 must be numeric -->
                                                 <!-- <div class="alert alert-danger" *ngIf="ccnum3.touched && !ccnum3.valid">  -->
                                                     <!-- <div *ngIf="ccnum3.errors.required">
@@ -121,7 +121,7 @@
 
                                             </div>
                                             <div class="col-md-3">
-                                                <!-- last set of card number  is required, has to be minimum length 4 and 
+                                                <!-- last set of card number  is required, has to be minimum length 4 and
                                                 must be numeric -->
 
                                                 <input type="text" class="form-control" minlength="4" maxlength="4"
@@ -178,7 +178,7 @@
                                         <div class="form-group">
                                             <label for="cc-exp" class="control-label mb-1">Expiration</label>
                                             <select class="form-control" name="cc_exp_yr">
-                    
+
                                                 <option>2019</option>
                                                 <option>2020</option>
                                                 <option>2021</option>
@@ -197,7 +197,7 @@
                                     <div class="col-4">
                                         <label for="x_card_code" class="control-label mb-1">Security code</label>
                                         <div class="input-group">
-                                             <!-- security code is required, has to be minimum length 3 and 
+                                             <!-- security code is required, has to be minimum length 3 and
                                                 must be numeric -->
                                             <input type="text" class="form-control" minlength="3" maxlength="3"
                                                 pattern="[0-9]*" title="CVV" required="" ngModel name="ccv"
@@ -226,10 +226,10 @@
                                 <div>
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                    <span id="payment-button-amount" (click)="onClickPlaceOrder">Pay ${{(product.price)+3}}</span>
+                                    <span id="payment-button-amount" (click)="onClickPlaceOrder">Pay ${{(price)+3}}</span>
                                 </button>
                             </div>
-                            </form>                           
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -241,7 +241,7 @@
 
     <!-- Order Summary Side Panel -->
     <div class="mainc_c">
-      
+
         <div class="col-md-12 order-md-2 mb-4" id="col-md-12">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Car Rent Summary</span>
@@ -250,28 +250,28 @@
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Year</h6>
-                                </div> 
-                            <span class="text-muted">{{product.productCode}}</span>
+                                </div>
+                            <span class="text-muted">{{year}}</span>
                         </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Vehicle Name</h6>
-                            
-                            </div> 
-                        <span class="text-muted">{{product.productName}}</span>
+
+                            </div>
+                        <span class="text-muted">{{vehicleName}}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">releaseDate</h6>
-                            
+
                         </div>
-                        <span class="text-muted">{{product.releaseDate}}</span>
+                        <span class="text-muted">{{releaseDate}}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">rent price</h6>
                             </div>
-                            <span class="text-muted">{{product.price}}</span>
+                            <span class="text-muted">{{price}}</span>
                         </li>
                        <!--  <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
@@ -289,22 +289,22 @@
                             <li class="list-group-item d-flex justify-content-between bg-light">
                                     <div class="text-success">
                                         <h6 class="my-0">Internet Handling Fees</h6>
-                                      
+
                                     </div>
                                     <span class="text-success">+${{handlingfees}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total Amount Payable (USD)</span>
-                                    <strong>${{(product.price) + handlingfees}}</strong>
+                                    <strong>${{(price) + handlingfees}}</strong>
                                 </li>
                             </ul>
 
                         </div>
-                       
+
 
                      </div>
-                     
-                </div>  
+
+                </div>
 
 
 

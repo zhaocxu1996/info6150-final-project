@@ -42,8 +42,8 @@ exports.get = function (userId) {
  *
  * @param {Object} user {User object}
  */
-exports.update = function (user) {
-    const promise = User.findOneAndUpdate({_id: user._id}, user).exec();
+exports.update = function (id, user) {
+    const promise = User.findOneAndUpdate({_id: id}, user).exec();
     return promise;
 };
 

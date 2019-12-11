@@ -54,6 +54,13 @@ let CarSchema = new Schema({
         type: Number,
         default:0
     },
+    location: {
+        type: String
+    },
+    isRent: {
+        type: Boolean,
+        default: false
+    },
     /**
      * Last modified date.
      */

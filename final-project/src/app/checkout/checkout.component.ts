@@ -1,82 +1,101 @@
+import { UserService } from './../users/user.service';
+import { User } from './../users/user.model';
 import { Component, OnInit } from '@angular/core';
 
-import { ProductService} from'../products/product.service';
+import { ProductService } from '../products/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CarsService } from './cars.service'
-import { IProduct } from '../products/product'
+import { IProduct } from '../products/product';
 @Component({
   selector: 'pm-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  productId: number;
-  productName: string;
-  productCode: string;
+  id: number;
+  vehicleName: string;
+  year: number;
   releaseDate: string;
   price: number;
-  description: string;
-  starRating: number;
-  imageUrl: string;
   product: IProduct | undefined;
-   
-   username: string;
-   cardnum1:string;
-   cardnum2:string;
-   cardnum3:string;
-   cardnum4:string;
-   cvvcode:string;
-   handlingfees = 3;
-   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private carsService: CarsService) {
-     
-}
 
+  user: User;
+
+  username: string;
+  cardnum1: string;
+  cardnum2: string;
+  cardnum3: string;
+  cardnum4: string;
+  cvvcode: string;
+  handlingfees = 3;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productService: ProductService,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log(`现在的id是${id}`);
-   
-    this.carsService.getcarById(id).subscribe(data=>{
-      this.product = data[0];
-      console.log(data)
-    });
+    this.user = this.userService.getUser();
+    if (this.user === undefined) {
+      this.router.navigate(['login']);
+    }
 
-    
+    this.id = Number(this.route.snapshot.paramMap.get("id"));
+    console.log(`现在的id是${this.id}`);
+
+    this.productService.getProduct(this.id).subscribe(data => {
+      console.log(data);
+      this.product = data;
+      this.price = data.price;
+      this.year = data.year;
+      this.vehicleName = data.vehicleName;
+      this.releaseDate = data.releaseDate;
+    });
   }
   onClickPlaceOrder() {
-    if(this.username === "" || this.username === null || this.username === undefined)
-    {
-      alert("Please provide name.");
+    if (
+      this.username === '' ||
+      this.username === null ||
+      this.username === undefined
+    ) {
+      alert('Please provide name.');
       return;
     }
-    if(this.cardnum1 === "" || this.cardnum1 === null || this.cardnum1 === undefined)
-    {
+    if (
+      this.cardnum1 === "" ||
+      this.cardnum1 === null ||
+      this.cardnum1 === undefined
+    ) {
       alert("Please card complete num.");
       return;
     }
 
-    if(this.cardnum2 === "" || this.cardnum2 === null || this.cardnum2 === undefined)
-    {
+    if (
+      this.cardnum2 === "" ||
+      this.cardnum2 === null ||
+      this.cardnum2 === undefined
+    ) {
       alert("Please card complete num.");
       return;
     }
 
-    if(this.cardnum3 === "" || this.cardnum3 === null || this.cardnum3 === undefined)
-    {
+    if (
+      this.cardnum3 === "" ||
+      this.cardnum3 === null ||
+      this.cardnum3 === undefined
+    ) {
       alert("Please card complete num.");
       return;
     }
-    if(this.cvvcode === "" || this.cvvcode === null || this.cvvcode === undefined)
-    {
+    if (
+      this.cvvcode === "" ||
+      this.cvvcode === null ||
+      this.cvvcode === undefined
+    ) {
       alert("Please card security code.");
       return;
     }
-    alert('Order is being placed');
+    this.productService.sellProduct(this.id);
+    alert("Order is being placed");
   }
-  getDetail(): void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log(`现在的id是${id}`)
-}
 }

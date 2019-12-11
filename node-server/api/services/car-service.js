@@ -42,9 +42,9 @@ exports.get = function (carId) {
  *
  * @param {Object} car {Car object}
  */
-exports.update = function (car) {
+exports.update = function (id, car) {
     car.modified_date = new Date();
-    const promise = Car.findOneAndUpdate({_id: car._id}, car).exec();
+    const promise = Car.findOneAndUpdate({_id: id}, car).exec();
     return promise;
 };
 

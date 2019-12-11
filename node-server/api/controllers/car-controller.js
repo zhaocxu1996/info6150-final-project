@@ -86,8 +86,8 @@ exports.put = function (request, response) {
         response.status(200);
         response.json(car);
     };
-    car._id = request.params.carId;
-    carService.update(car)
+    const id = request.params.carId;
+    carService.update(id, car)
         .then(resolve)
         .catch(renderErrorResponse(response));
 };
