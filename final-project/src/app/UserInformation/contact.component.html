@@ -1,9 +1,7 @@
 <div id="container">
 
     <main>
-           <h2>Contact Form</h2>
-        Note : Fields marked with an asterisk(*) are mandatory
-        <br><br>
+           
         <form method="get" name="Form"  onsubmit="results();" action="displayResult.html">
           <fieldset>
               <label> Username * :</label>
@@ -26,23 +24,10 @@
            <p class="zip"></p>
            <br><br>
 
-           <label for="zipcode">How did you hear us*:</label>
-           <input type='checkbox' name="source" value="facebook" /> Facebook
-           <input type='checkbox' name="source" value="google" /> Google
-           <input type='checkbox' name="source" value="yelp" /> Yelp
-           <br><br>
+          
 
-           <label for="">Options:</label>
-           <select name="Questions" id="Questions" onchange="exp(this)">
-           <option>Please Select Questions</option>
-           <option value="Check Availability">Check Availability</option>
-           <option value="Want To Rent This Car">Want To Rent This Car</option>
-           <option value="Ask For More Deteals">Ask For More Deteals</option>
-           </select><br>
-           <br><br>
-           <label for="comments">Comments*:</label>
-           <textarea name="text" id="comments" placeholder="Your comments" rows="4" cols="30"></textarea>
-           <p class="comment"></p>
+           
+        
            <br><br>
            <input type="Submit" value ="Submit" onclick="update()" >
            <input type="Reset">
