@@ -1,6 +1,18 @@
-# ContactsApp
+# Car Rental Website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+
+Using angular application using the REST APIs.
+
+Creating a car rental website with functions:
+Login/Register as User
+Change User Information
+View All Inventory
+Filter By Location
+View Vehicle Details
+Checkout
+Contact Us Form
+
 
 ## Development server
 
@@ -12,6 +24,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
+```
+NodeJs
+Angular CLI
+```
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
