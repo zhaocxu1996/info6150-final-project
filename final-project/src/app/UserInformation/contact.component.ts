@@ -27,6 +27,9 @@ export class ContactComponent {
 
 
   update() {
-
+    // this.userService.saveNewUser(this.user);
+    this.userService.updateUser(this.user).subscribe(data => {
+      console.log(data);
+    })
   }
 }

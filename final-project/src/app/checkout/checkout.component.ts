@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     this.id = Number(this.route.snapshot.paramMap.get("id"));
-    console.log(`现在的id是${this.id}`);
+    console.log(`Product id: ${this.id}`);
 
     this.productService.getProduct(this.id).subscribe(data => {
       console.log(data);
@@ -67,7 +67,7 @@ export class CheckoutComponent implements OnInit {
       this.cardnum1 === null ||
       this.cardnum1 === undefined
     ) {
-      alert("Please card complete num.");
+      alert('Please card complete num.');
       return;
     }
 
@@ -76,7 +76,7 @@ export class CheckoutComponent implements OnInit {
       this.cardnum2 === null ||
       this.cardnum2 === undefined
     ) {
-      alert("Please card complete num.");
+      alert('Please card complete num.');
       return;
     }
 
@@ -85,7 +85,7 @@ export class CheckoutComponent implements OnInit {
       this.cardnum3 === null ||
       this.cardnum3 === undefined
     ) {
-      alert("Please card complete num.");
+      alert('Please card complete num.');
       return;
     }
     if (
@@ -93,10 +93,18 @@ export class CheckoutComponent implements OnInit {
       this.cvvcode === null ||
       this.cvvcode === undefined
     ) {
-      alert("Please card security code.");
+      alert('Please card security code.');
       return;
     }
-    this.productService.sellProduct(this.id);
-    alert("Order is being placed");
+    // checked all the user input, then change the status of car and user
+    this.product.isRent = true;
+    this.productService.updateProduct(this.product).subscribe(data => {
+      console.log(data);
+    });
+    this.user.car = this.product.productId.toString();
+    this.userService.updateUser(this.user).subscribe(data => {
+      console.log(data);
+    });
+    alert('Order is being placed');
   }
 }

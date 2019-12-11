@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter((product: IProduct) =>
-      product.location.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      product.address.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
 

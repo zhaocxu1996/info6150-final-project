@@ -48,12 +48,14 @@ export class UserService {
   }
 
   public saveNewUser(user: Object): Observable<User> {
+    console.log(user);
     const user$ = this.http.post<User>(this.remoteUrlPattern, user);
     return user$;
   }
 
   public updateUser(user: User): Observable<User> {
     const user$ = this.http.put<User>(this.remoteUrlPattern + `/${user.id}`, user);
+    // const user$ = this.http.put<User>(this.remoteUrlPattern, user);
     return user$;
   }
 }

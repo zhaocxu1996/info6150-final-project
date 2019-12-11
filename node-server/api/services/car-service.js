@@ -44,7 +44,7 @@ exports.get = function (carId) {
  */
 exports.update = function (id, car) {
     car.modified_date = new Date();
-    const promise = Car.findOneAndUpdate({_id: id}, car).exec();
+    const promise = Car.findOneAndUpdate({productId: id}, car).exec();
     return promise;
 };
 
