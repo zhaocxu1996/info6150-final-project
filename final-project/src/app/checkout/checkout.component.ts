@@ -1,42 +1,101 @@
+import { UserService } from './../users/user.service';
+import { User } from './../users/user.model';
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../checkout/car';
-import { ProductService} from'../products/product.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
-// import { carlist } from '../checkout/carlist';
+import { ProductService } from '../products/product.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IProduct } from '../products/product';
 @Component({
   selector: 'pm-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-   product:Car={
-    "productId": 1,
-    "productName": "BMW M4",
-    "productCode": "2014",
-    "releaseDate": "March 19, 2019",
-    "description": "Leaf rake with 48-inch wooden handle.",
-    "price": 19.95,
-    "starRating": 3.2,
-    "imageUrl": "assets/images/m4.jpg"
-   }
-   
-   handlingfees = 3;
-   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private productService: ProductService) {
-     
-}
+  id: number;
+  vehicleName: string;
+  year: number;
+  releaseDate: string;
+  price: number;
+  product: IProduct | undefined;
 
+  user: User;
+
+  username: string;
+  cardnum1: string;
+  cardnum2: string;
+  cardnum3: string;
+  cardnum4: string;
+  cvvcode: string;
+  handlingfees = 3;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productService: ProductService,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
-    this.getDetail()
+    this.user = this.userService.getUser();
+    if (this.user === undefined) {
+      this.router.navigate(['login']);
+    }
+
+    this.id = Number(this.route.snapshot.paramMap.get("id"));
+    console.log(`现在的id是${this.id}`);
+
+    this.productService.getProduct(this.id).subscribe(data => {
+      console.log(data);
+      this.product = data;
+      this.price = data.price;
+      this.year = data.year;
+      this.vehicleName = data.vehicleName;
+      this.releaseDate = data.releaseDate;
+    });
   }
   onClickPlaceOrder() {
-    alert('Order is being placed');
+    if (
+      this.username === '' ||
+      this.username === null ||
+      this.username === undefined
+    ) {
+      alert('Please provide name.');
+      return;
+    }
+    if (
+      this.cardnum1 === "" ||
+      this.cardnum1 === null ||
+      this.cardnum1 === undefined
+    ) {
+      alert("Please card complete num.");
+      return;
+    }
+
+    if (
+      this.cardnum2 === "" ||
+      this.cardnum2 === null ||
+      this.cardnum2 === undefined
+    ) {
+      alert("Please card complete num.");
+      return;
+    }
+
+    if (
+      this.cardnum3 === "" ||
+      this.cardnum3 === null ||
+      this.cardnum3 === undefined
+    ) {
+      alert("Please card complete num.");
+      return;
+    }
+    if (
+      this.cvvcode === "" ||
+      this.cvvcode === null ||
+      this.cvvcode === undefined
+    ) {
+      alert("Please card security code.");
+      return;
+    }
+    this.productService.sellProduct(this.id);
+    alert("Order is being placed");
   }
-  getDetail(): void{
-    const id = +this.route.snapshot.paramMap.get('');
-    console.log(`现在的id是${id}`)
-}
 }

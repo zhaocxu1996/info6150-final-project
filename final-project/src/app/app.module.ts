@@ -1,4 +1,3 @@
-// import { UserComponent } from './users/user.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginComponent } from './users/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,12 +35,10 @@ import { contactUsComponent } from './contactUs/contactUs.component';
       { path: 'register', component: RegisterComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
-      { path:'checkout',component:CheckoutComponent},
       { path: 'contactUs', component: contactUsComponent },
+      { path: 'checkout/:id', component: CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
-     
-       
     ]),
     ProductModule
   ],

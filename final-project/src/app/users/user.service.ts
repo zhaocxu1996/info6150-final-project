@@ -13,7 +13,7 @@ export class UserService {
 
   private remoteUrlPattern = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   public getAllUsers(): Observable<Array<User>> {
     const users$ = this.http.get<User[]>(this.remoteUrlPattern);
@@ -30,8 +30,6 @@ export class UserService {
     return users$;
   }
 
-
-
   public setUser(user: User) {
     this.user = user;
   }
@@ -42,6 +40,11 @@ export class UserService {
     } else {
       return this.user;
     }
+  }
+
+  public logout() {
+    this.user = undefined;
+    console.log(this.user);
   }
 
   public saveNewUser(user: Object): Observable<User> {
