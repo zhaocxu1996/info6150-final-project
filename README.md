@@ -5,13 +5,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Using angular application using the REST APIs.
 
 Creating a car rental website with functions:
-Login/Register as User
-Change User Information
-View All Inventory
-Filter By Location
-View Vehicle Details
-Checkout
-Contact Us Form
+1. Login/Register as User
+2. Change User Information
+3. View All Inventory
+4. Filter By Location
+5. View Vehicle Details
+6. Checkout
+7. Contact Us Form
 
 
 ## Development server
