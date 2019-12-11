@@ -106,5 +106,6 @@ export class CheckoutComponent implements OnInit {
       console.log(data);
     });
     alert('Order is being placed');
+    this.id = -1;
   }
 }

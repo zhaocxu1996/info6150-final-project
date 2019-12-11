@@ -29,8 +29,8 @@
             <th>Customer Review</th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let product of filteredProducts">
+        <tbody *ngFor="let product of filteredProducts">
+          <tr *ngIf="product.isRent==false">
             <td>
               <img
                 *ngIf="showImage"

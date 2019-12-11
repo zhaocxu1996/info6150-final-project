@@ -2,7 +2,7 @@
 <!-- <script type="textr/javascript" src="jspdf.min.js"></script>
 <script type="text/javascript" src="html2canvas.js"></script> -->
 <script type="text/javascript"></script>
-<div class="mainc">
+<div class="mainc" *ngIf="id>0">
   <div class="mainc_b">
     <div class="container-fluid py-3 bg-dark card ">
       <div class="row">
@@ -390,4 +390,12 @@
   </div>
 </div>
 
-
+<div *ngIf="id<0">
+  <div>
+    <span>You have successfully finished your payment!</span>
+  </div>
+  <div>
+    <a href="#" [routerLink]="['/welcome']">Go back to the Home Page</a>
+  </div>
+</div>
+<pm-footer></pm-footer>
