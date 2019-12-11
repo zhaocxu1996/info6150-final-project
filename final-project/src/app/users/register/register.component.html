@@ -1,28 +1,31 @@
 <!-- <p>register works!</p> -->
-<div>
-  <form (ngSubmit)="register()">
-    <fieldset class="fieldset">
-      <label>Username: </label>
-      <input type="text" name="username" [(ngModel)]="username">
-    </fieldset>
-    <fieldset class="fieldset">
-      <label>Password: </label>
-      <input type="password" name="password" [(ngModel)]="password">
-    </fieldset>
-    <fieldset class="fieldset">
-      <label>Contact: </label>
-      <input type="text" name="contact" [(ngModel)]="contact">
-    </fieldset>
-    <fieldset class="fieldset">
-      <label>Address: </label>
-      <input type="text" name="address" [(ngModel)]="address">
-    </fieldset>
-    <fieldset class="fieldset">
-      <label>Email: </label>
-      <input type="text" name="email" [(ngModel)]="email">
-    </fieldset>
-    <div class="submit">
-      <button type="submit" class="register-btn">Register</button>
-    </div>
-  </form>
+<div class="container-login100">
+  <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+    <form (ngSubmit)="register()" class="login100-form validate-form">
+      <span class="login100-form-title p-b-37">Sign Up</span>
+      <div class="wrap-input100 validate-input m-b-20">
+        <input class="input100" type="text" name="username" [(ngModel)]="username" placeholder="username">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 validate-input m-b-25">
+        <input class="input100" type="password" name="password" [(ngModel)]="password" placeholder="password">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 validate-input m-b-30">
+        <input class="input100" type="text" name="contact" [(ngModel)]="contact" placeholder="contact">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 validate-input m-b-35">
+        <input class="input100" type="text" name="address" [(ngModel)]="address" placeholder="address">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="wrap-input100 validate-input m-b-40">
+        <input class="input100" type="text" name="email" [(ngModel)]="email" placeholder="email">
+        <span class="focus-input100"></span>
+      </div>
+      <div class="container-login100-form-btn">
+        <button type="submit" class="login100-form-btn">Sign up</button>
+      </div>
+    </form>
+  </div>
 </div>

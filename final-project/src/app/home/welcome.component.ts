@@ -11,7 +11,7 @@ import { ProductService } from '../products/product.service';
 export class WelcomeComponent {
   public pageTitle = 'Welcome';
 
-  
+
   constructor(private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
@@ -25,5 +25,5 @@ export class WelcomeComponent {
   onList(): void {
     this.router.navigate(['/products']);
   }
-  
+
 }

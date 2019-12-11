@@ -1,3 +1,16 @@
 .nav-link {
   font-size: large;
 }
+
+.nav-btn {
+  border: 0;
+  background-color: #f8f9fa;
+  color: #157ffb;
+  font-size: large;
+}
+
+li {
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
