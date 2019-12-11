@@ -1,3 +1,4 @@
+import { UserService } from './../../users/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -15,7 +16,8 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private productService: ProductService) {
+              private productService: ProductService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
@@ -40,6 +42,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   checkout() {
-    this.router.navigate(['/checkout', this.product.productId]);
+    if (this.userService.getUser().car!==null) {
+      alert('You have already rent a car!');
+    } else {
+      this.router.navigate(['/checkout', this.product.productId]);
+    }
   }
 }
