@@ -41,11 +41,11 @@
              [style.width.px]='200'
              [style.margin.px]='2'
              [src]='product.imageUrl'
-             [title]='product.productName'>
+             [title]='product.vehicleName'>
       </div>
     </div>
   </div>
-  <button class='btn btn-outline-secondary' [routerLink]="['/checkout']" style='width:80px;position:relative; top:0px; left:800px;'>choose</button>
+  <button class='btn btn-outline-secondary' (click)="checkout()" style='width:80px;position:relative; top:0px; left:800px;'>choose</button>
   <div class='card-footer'>
     <button class='btn btn-outline-secondary'
             (click)='onBack()'

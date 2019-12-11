@@ -37,6 +37,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.user = this.userService.getUser();
     if (this.user === undefined) {
+      console.log('undefined');
       this.router.navigate(['login']);
     }
 
