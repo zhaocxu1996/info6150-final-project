@@ -1,0 +1,14 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+    <a class='navbar-brand'>{{pageTitle}}</a>
+    <ul class='nav nav-pills'>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/contact']">User Information </a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/contactUs']">Contact Us</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/login']">Sign In</a></li>
+      <li><button class="nav-btn" type="submit" (click)="logout()">Sign Out</button></li>
+    </ul>
+</nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>

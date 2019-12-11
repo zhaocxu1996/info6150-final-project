@@ -82,7 +82,6 @@ exports.get = function (request, response) {
  */
 exports.put = function (request, response) {
     const user = Object.assign({}, request.body);
-    console.log(user);
     const resolve = (user) => {
         response.status(200);
         response.json(user);
