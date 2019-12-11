@@ -23,7 +23,9 @@ export class ProductDetailComponent implements OnInit {
     if (param) {
       const id = +param;
       this.getProduct(id);
+      console.log(id)
     }
+
   }
 
   getProduct(id: number) {
@@ -34,6 +36,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/products', this.product.productId]);
+  }
+
+  checkout() {
+    this.router.navigate(['/checkout', this.product.productId]);
   }
 }

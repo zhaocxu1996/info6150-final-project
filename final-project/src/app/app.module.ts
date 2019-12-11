@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
 import { ContactComponent } from './contact/contact.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
-    ContactComponent
+    ContactComponent,
+    CheckoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,7 @@ import { ContactComponent } from './contact/contact.component';
       { path: 'register', component: RegisterComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'contact', component: ContactComponent },
+      { path:'checkout/:id',component:CheckoutComponent},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
     ]),
